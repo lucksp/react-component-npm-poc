@@ -1,7 +1,7 @@
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 
 const packageJson = await import('./package.json');
 
@@ -19,10 +19,11 @@ export default {
       sourcemap: true,
     },
   ],
-  plugins: [
-    peerDepsExternal(),
-    resolve(),
-    commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
-  ],
+  plugins: [peerDepsExternal(), resolve(), commonjs(), typescript()],
 };
+
+// Other useful plugins you might want to add are:
+
+// @rollup/plugin-images - import image files into your components
+// @rollup/plugin-json - import JSON files into your components
+// rollup-plugin-terser - minify the Rollup bundle
