@@ -1,8 +1,17 @@
 import React, { FC } from 'react';
 import { StyledButton } from './StyledButton.css';
 import { ButtonProps } from './Button.types';
+import { SVG } from '../SVG/Svg';
 
-const Button: FC<ButtonProps> = ({ text, autoFocus, disabled, testId, type = 'button', name }) => {
+const Button: FC<ButtonProps> = ({
+  text,
+  autoFocus,
+  disabled,
+  testId,
+  type = 'button',
+  name,
+  iconSource,
+}) => {
   return (
     <StyledButton
       autoFocus={autoFocus}
@@ -11,7 +20,8 @@ const Button: FC<ButtonProps> = ({ text, autoFocus, disabled, testId, type = 'bu
       data-testid={testId ? `button-${testId}` : undefined}
       name={name}
     >
-      {text}
+      <span>{text}</span>
+      {iconSource && <SVG source={iconSource} fillcolor={'eee'} />}
     </StyledButton>
   );
 };
