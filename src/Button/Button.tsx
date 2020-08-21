@@ -2,14 +2,7 @@ import React, { FC } from 'react';
 import { StyledButton } from './StyledButton.css';
 import { ButtonProps } from './Button.types';
 
-const Button: FC<ButtonProps> = ({
-  children,
-  autoFocus,
-  disabled,
-  testId,
-  type = 'button',
-  name,
-}) => {
+const Button: FC<ButtonProps> = ({ text, autoFocus, disabled, testId, type = 'button', name }) => {
   return (
     <StyledButton
       autoFocus={autoFocus}
@@ -18,7 +11,7 @@ const Button: FC<ButtonProps> = ({
       data-testid={testId ? `button-${testId}` : undefined}
       name={name}
     >
-      {children}
+      {text}
     </StyledButton>
   );
 };
