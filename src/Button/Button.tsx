@@ -11,6 +11,7 @@ const Button: FC<ButtonProps> = ({
   type = 'button',
   name,
   iconSource,
+  onClick,
 }) => {
   return (
     <StyledButton
@@ -19,6 +20,7 @@ const Button: FC<ButtonProps> = ({
       type={type}
       data-testid={testId ? `button-${testId}` : undefined}
       name={name}
+      onClick={onClick}
     >
       <span>{text}</span>
       {iconSource && <SVG source={iconSource} fillcolor={'eee'} />}

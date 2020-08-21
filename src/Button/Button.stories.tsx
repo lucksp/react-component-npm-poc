@@ -13,7 +13,7 @@ export default {
 export const Default: FC = () => {
   const primayButtonProps: ButtonProps = {
     text: text('Button Text', 'Next'),
-    onClick: () => action('I Clicked'),
+    onClick: action('onClick'),
   };
 
   return <Button {...primayButtonProps} />;
@@ -21,8 +21,8 @@ export const Default: FC = () => {
 
 export const WithIcon: FC = () => {
   const primayButtonProps: ButtonProps = {
-    text: text('Button Text', 'Next'),
-    onClick: () => action('I Clicked'),
+    text: text('Button Text', 'Submit'),
+    onClick: action('onClick'),
     iconSource: text('Button Icon', 'https://image.flaticon.com/icons/svg/561/561104.svg'),
   };
 
