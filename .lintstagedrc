@@ -4,6 +4,6 @@
     "npm run prettier:write",
   ],
   "**/*.css.ts": [
-    "npm run stylelint",
+    "npm run stylelint --fix",
   ]
 }
