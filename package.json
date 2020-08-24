@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "prettier": "prettier",
-    "build": "rollup -c",
+    "build": "rm -rf build && rollup -c",
     "lint": "eslint",
     "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
     "prettier:write": "npm run prettier",
@@ -38,7 +38,6 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@rollup/plugin-typescript": "^5.0.2",
     "@storybook/addon-actions": "^6.0.16",
     "@storybook/addon-essentials": "^6.0.16",
     "@storybook/addon-knobs": "^6.0.16",
@@ -72,6 +71,7 @@
     "react-svg": "^11.0.36",
     "rollup": "^2.26.3",
     "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-typescript2": "^0.27.2",
     "styled-components": "^5.1.1",
     "stylelint": "^13.6.1",
     "stylelint-config-recommended": "^3.0.0",
