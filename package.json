@@ -1,21 +1,25 @@
 {
   "name": "react-component-npm-poc",
   "version": "0.0.0",
-  "description": "react component",
+  "description": "create JS bundle from typescript",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "files": [
     "build"
   ],
   "scripts": {
+    "clean": "rm -rf build",
     "prettier": "prettier",
-    "build": "rm -rf build && rollup -c",
+    "build:babel": "",
+    "build:rollup": "npm run clean && rollup -c",
+    "build:tsc": "",
     "lint": "eslint",
     "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
     "prettier:write": "npm run prettier",
     "storybook:dev": "start-storybook -p 9001",
     "storybook:build": "build-storybook",
-    "stylelint": "stylelint"
+    "stylelint": "stylelint",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",

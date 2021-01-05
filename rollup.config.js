@@ -7,6 +7,10 @@ import typescript from 'rollup-plugin-typescript2';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const packageJson = require('./package.json');
 
+const globals = {
+  ...packageJson.devDependencies,
+};
+
 export default {
   input: 'src/index.ts',
   output: [
@@ -25,8 +29,18 @@ export default {
     peerDepsExternal(),
     resolve(),
     commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript({
+      useTsconfigDeclarationDir: true,
+      tsconfigOverride: {
+        exclude: ['**/*.stories.*'],
+      },
+    }),
+    commonjs({
+      exclude: 'node_modules',
+      ignoreGlobal: true,
+    }),
   ],
+  external: Object.keys(globals),
 };
 
 // Other useful plugins you might want to add are:
