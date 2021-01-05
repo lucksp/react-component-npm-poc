@@ -1,0 +1,9 @@
+{
+  "**/*.(js|jsx|ts|tsx)": [
+    "npm run lint:fix",
+    "npm run prettier:write",
+  ],
+  "**/*.css.ts": [
+    "npm run stylelint --fix",
+  ]
+}
